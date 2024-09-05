@@ -31,15 +31,10 @@
 		}
 
 		table td {
-			/*text-align: center;*/
+			/text-align: center;/
 			width: 75%;
 		}
 
-		table th,
-		table td {
-			/*padding: 5px;*/
-			/*border: 1px solid #ccc;*/
-		}
 
 		.user-img {
 			width: 50px;
@@ -47,9 +42,18 @@
 			/*		border-radius: 50%;*/
 		}
 	</style>
-</head>
+<style id="monica-reading-highlight-style">
+        .monica-reading-highlight {
+          animation: fadeInOut 1.5s ease-in-out;
+        }
 
-<body>
+        @keyframes fadeInOut {
+          0%, 100% { background-color: transparent; }
+          30%, 70% { background-color: rgba(2, 118, 255, 0.20); }
+        }
+      </style></head>
+
+<body data-new-gr-c-s-check-loaded="14.1192.0" data-gr-ext-installed="" monica-version="5.10.5" monica-id="ofpnmcalabcbjgholdjcjblkibolbppb">
 
 	<div id="print-table">
 		<div class="card" style="width:600px !important; margin:0 auto;" id="print-pdf">
@@ -78,7 +82,7 @@
 					<tr>
 						<th>Applicant name</th>
 						<td>
-														<img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0500059" class="user-img"> JESHWANTH SAGI						</td>
+														<img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0500059" class="user-img"> Jeswanth Sagi						</td>
 					</tr>
 					<tr>
 						<th>Applicant department</th>
@@ -93,7 +97,7 @@
 					<tr>
 						<th>Applicant mobile</th>
 						<td>
-							7780791924						</td>
+							9398573033						</td>
 					</tr>
 					<tr>
 						<th>Applicant e-mail</th>
@@ -102,7 +106,8 @@
 					</tr>
 										<tr>
 						<th>Booking date</th>
-						<td id = "booking-date">Loading...</td>
+						<td id="booking-date">Loading...</td>
+
 					</tr>
 					<tr>
 						<th>Booking slot</th>
@@ -118,7 +123,7 @@
 					<tr>
 						<th>Reference number</th>
 						<td>
-							20240904789632						</td>
+							20240824805043						</td>
 					</tr>
 					<tr>
 						<th>Status</th>
@@ -146,7 +151,7 @@
 		function printpage() {
 
 			document.getElementById("print-btn").style.display = 'none';
-			var fileName = '20240904789632' + ".pdf";
+			var fileName = '20240824805043' + ".pdf";
 			html2canvas(document.getElementById('print-pdf'), {
 				onrendered: function(canvas) {
 					var data = canvas.toDataURL();
@@ -154,14 +159,13 @@
 						content: [{
 							image: data,
 							width: 500,
-						}] 
+						}]
 					};
 					pdfMake.createPdf(docDefinition).download(fileName);
 				}
 			});
 		}
-<script>
-    function formatDate(date) {
+		function formatDate(date) {
       const options = { year: 'numeric', month: 'short', day: 'numeric' };
       return date.toLocaleDateString(undefined, options);
     }
@@ -170,7 +174,6 @@
       const today = new Date();
       document.getElementById('booking-date').textContent = formatDate(today);
     });
-  </script>
 
 	</script>
 	<style>
@@ -185,4 +188,4 @@
 
 	
 
-</body></html>
+<div id="monica-content-root" class="monica-widget"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
