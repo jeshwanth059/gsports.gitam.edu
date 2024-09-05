@@ -166,8 +166,16 @@
 			});
 		}
 		function formatDate(date) {
-      const options = { year: 'numeric', month: 'short', day: 'numeric' };
-      return date.toLocaleDateString(undefined, options);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
+    return ${day}-${month.charAt(0).toUpperCase() + month.slice(1).toLowerCase()}-${year};
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+    document.getElementById('booking-date').textContent = formatDate(today);
+});
     }
 
     document.addEventListener('DOMContentLoaded', () => {
