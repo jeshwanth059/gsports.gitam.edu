@@ -102,8 +102,7 @@
 					</tr>
 										<tr>
 						<th>Booking date</th>
-						<td>
-							07-Sep-2024						</td>
+						<td id = "booking-date">Loading...</td>
 					</tr>
 					<tr>
 						<th>Booking slot</th>
@@ -161,6 +160,18 @@
 				}
 			});
 		}
+<script>
+    function formatDate(date) {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return date.toLocaleDateString(undefined, options);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      document.getElementById('booking-date').textContent = formatDate(today);
+    });
+  </script>
+
 	</script>
 	<style>
 		td {
